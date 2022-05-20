@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+      "alwaysStrict": true,
+      "downlevelIteration": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "inlineSourceMap": true,
+      "lib": [
+          "es2020"
+      ],
+      "moduleResolution": "node",
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      "noImplicitReturns": true,
+      "noUncheckedIndexedAccess": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "resolveJsonModule": true,
+      "strict": true,
+      "stripInternal": true,
+      "target": "ES2020",
+      "typeRoots": [
+          "node_modules/@types"
+      ],
+      "useDefineForClassFields": true
+  },
+  "exclude": [
+      "node_modules",
+      "cdk.out",
+      "dist"
+  ],
+  "include": [
+      "."
+  ]
+}
