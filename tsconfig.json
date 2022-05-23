@@ -19,6 +19,7 @@
       "resolveJsonModule": true,
       "strict": true,
       "stripInternal": true,
+      "useUnknownInCatchVariables": true,
       "target": "ES2020",
       "typeRoots": [
           "node_modules/@types"

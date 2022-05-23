@@ -1,6 +1,6 @@
 import { buildSync } from "esbuild";
 import { App } from "aws-cdk-lib";
-import { SimpleLambdaStack } from "./src/stack";
+import { KafkaLambdaStack } from "./src/stack";
 import * as dotenv from "dotenv";
 
 import path from "node:path";
@@ -19,7 +19,7 @@ buildSync({
 });
 
 const app = new App();
-new SimpleLambdaStack(app, `${process.env.STACK_PROJECT}`, {
+new KafkaLambdaStack(app, `${process.env.STACK_PROJECT}`, {
   description: `${process.env.STACK_DESCRIPTION}`,
   stackName: `${process.env.STACK_NAME}`,
   env: {

@@ -9,12 +9,13 @@
     "@types/aws-lambda": "^8.10.97",
     "aws-cdk-lib": "^2.24.1",
     "constructs": "^10.1.12",
-    "dotenv": "^16.0.1",
     "esbuild": "^0.14.39",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
   },
   "dependencies": {
-    "aws-lambda": "^1.0.7"
+    "@upstash/kafka": "^1.2.2",
+    "aws-lambda": "^1.0.7",
+    "dotenv": "^16.0.1"
   }
 }
