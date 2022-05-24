@@ -13,14 +13,18 @@ const kafka = new Kafka({
 const reader = kafka.consumer();
 
 export const handler: Handler = async event => {
+  let response: any = "";
+  const payload = JSON.parse(event.body);
+  console.log(payload);
+  console.log(payload.topics);
   try {
-    const messages = await reader.consume({
+    const writing = await reader.consume({
       consumerGroupId: "group_1",
       instanceId: "instance_1",
-      topics: ["ulysses"],
-      autoOffsetReset: "latest",
+      topics: payload.topics,
+      autoOffsetReset: payload.autoOffsetReset ?? "earliest",
     });
-    console.log(messages);
+    response = writing;
   } catch (err) {
     console.error(err);
     if (err instanceof Error) throw err;
@@ -28,7 +32,7 @@ export const handler: Handler = async event => {
   }
 
   return {
-    body: JSON.stringify(event, null, 2),
+    body: JSON.stringify(response, null, 2),
     headers: {
       "Content-Type": "text/plain;charset=utf-8",
       "X-Clacks-Overhead": "GNU Terry Pratchett",

@@ -13,23 +13,26 @@ const kafka = new Kafka({
 const writer = kafka.producer();
 
 export const handler: Handler = async event => {
-  // let response = "";
+  let response: any = "";
 
-  const message = {
-    line: "Happy families are all alike; every unhappy family is unhappy in its own way.",
+  const payload = JSON.parse(event.body);
+
+  const writing = {
+    line: payload.line ?? "",
   };
 
   try {
-    const res = await writer.produce("ulysses", message);
-    console.log(res);
+    const res = await writer.produce("ulysses", writing, {
+      key: payload.author ?? "",
+    });
+    response = res;
   } catch (err) {
-    console.error(err);
     if (err instanceof Error) throw err;
     else throw new Error(`${err}`);
   }
 
   return {
-    body: JSON.stringify(event, null, 2),
+    body: JSON.stringify(response, null, 2),
     headers: {
       "Content-Type": "text/plain;charset=utf-8",
       "X-Clacks-Overhead": "GNU Terry Pratchett",
