@@ -2,7 +2,7 @@
 
 > Experimenting the Kafka Serverless of Upstash.
 
-Read full article here.
+Read [Kafka on the Serverless Shore: Building event-driven applications with Kafka](https://dev.to/aws-builders/kafka-on-the-serverless-shore-building-event-driven-applications-with-kafka-23df) for context.
 
 ## Deploying
 
