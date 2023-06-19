@@ -7,7 +7,7 @@
     "@aws-cdk/aws-apigatewayv2-alpha": "2.24.1-alpha.0",
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "2.24.1-alpha.0",
     "@types/aws-lambda": "^8.10.97",
-    "aws-cdk-lib": "^2.24.1",
+    "aws-cdk-lib": "^2.80.0",
     "constructs": "^10.1.12",
     "esbuild": "^0.14.39",
     "ts-node": "^10.7.0",
